@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Tarea 7 - Microcontroladores",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -130, "left": 60, "attrs": { "color": "red", "label": "LED1" } },
+    { "type": "wokwi-led", "id": "led2", "top": -130, "left": 150, "attrs": { "color": "green", "label": "LED2" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -70, "left": 40, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": -70, "left": 130, "attrs": { "value": "220" } },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 90, "left": 60, "attrs": { "color": "blue", "label": "IZQ" } },
+    { "type": "wokwi-pushbutton", "id": "btn2", "top": 90, "left": 170, "attrs": { "color": "red", "label": "DER" } }
+  ],
+  "connections": [
+    [ "esp:D5", "btn1:1.l", "blue", [] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [] ],
+    [ "esp:D4", "btn2:1.l", "red", [] ],
+    [ "btn2:2.l", "esp:GND.1", "black", [] ],
+    [ "esp:D14", "r1:1", "orange", [] ],
+    [ "r1:2", "led1:A", "orange", [] ],
+    [ "led1:C", "esp:GND.2", "black", [] ],
+    [ "esp:D12", "r2:1", "yellow", [] ],
+    [ "r2:2", "led2:A", "yellow", [] ],
+    [ "led2:C", "esp:GND.2", "black", [] ]
+  ]
+}
